@@ -71,6 +71,18 @@ namespace BDInfo
             }
         }
 
+        private String HumanReadableFilesize(double size)
+        {
+            String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB" };
+            double mod = 1024.0;
+            int i = 0;
+            while (size >= mod) {
+                size /= mod;
+                i++;
+            }
+            return Math.Round(size, 4) + units[i];
+        }
+
         public void LoadPlaylists()
         {
             string selectedPlaylistName = null;
@@ -136,7 +148,7 @@ namespace BDInfo
                 }
                 else if (playlist.FileSize > 0)
                 {
-                    playlistSize.Text = playlist.FileSize.ToString("N0");
+                    playlistSize.Text = HumanReadableFilesize(playlist.FileSize);
                     playlistSize.Tag = playlist.FileSize;
                 }
                 else
@@ -149,7 +161,7 @@ namespace BDInfo
                     new ListViewItem.ListViewSubItem();
                 if (playlist.TotalAngleSize > 0)
                 {
-                    playlistSize2.Text = (playlist.TotalAngleSize).ToString("N0");
+                    playlistSize2.Text = HumanReadableFilesize(playlist.TotalAngleSize);
                 }
                 else
                 {
@@ -249,7 +261,7 @@ namespace BDInfo
                 }
                 else if (clip.FileSize > 0)
                 {
-                    clipSize.Text = clip.FileSize.ToString("N0");
+                    clipSize.Text = HumanReadableFilesize(clip.FileSize);
                     clipSize.Tag = clip.FileSize;
                 }
                 else
@@ -262,7 +274,7 @@ namespace BDInfo
                     new ListViewItem.ListViewSubItem();
                 if (clip.PacketSize > 0)
                 {
-                    clipSize2.Text = clip.PacketSize.ToString("N0");
+                    clipSize2.Text = HumanReadableFilesize(clip.PacketSize);
                 }
                 else
                 {

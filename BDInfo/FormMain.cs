@@ -107,7 +107,7 @@ namespace BDInfo
             {
                 CommonOpenFileDialog openDialog = new CommonOpenFileDialog();
                 openDialog.IsFolderPicker = true;
-                openDialog.Title = "Select a Blu - ray BDMV Folder:";
+                openDialog.Title = "选择 Blu-ray BDMV 文件夹:";
 
                 if (!string.IsNullOrEmpty(textBoxSource.Text))
                 {
@@ -128,7 +128,7 @@ namespace BDInfo
                     ex.Message,
                     Environment.NewLine);
 
-                MessageBox.Show(msg, "BDInfo Error", 
+                MessageBox.Show(msg, "BDInfo 错误", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -143,12 +143,12 @@ namespace BDInfo
             catch (Exception ex)
             {
                 string msg = string.Format(
-                    "Error opening path {0}: {1}{2}",
+                    "打开路径错误 {0}: {1}{2}",
                     path,
                     ex.Message,
                     Environment.NewLine);
 
-                MessageBox.Show(msg, "BDInfo Error",
+                MessageBox.Show(msg, "BDInfo 错误",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -305,7 +305,7 @@ namespace BDInfo
         private void InitBDROM(
             string path)
         {
-            ShowNotification("Please wait while we scan the disc...");
+            ShowNotification("请稍候，我们正在扫描光盘...");
 
             CustomPlaylistCount = 0;
             buttonBrowse.Enabled = false;
@@ -355,8 +355,8 @@ namespace BDInfo
         protected bool BDROM_PlaylistFileScanError(TSPlaylistFile playlistFile, Exception ex)
         {
             DialogResult result = MessageBox.Show(string.Format(
-                "An error occurred while scanning the playlist file {0}.\n\nThe disc may be copy-protected or damaged.\n\nDo you want to continue scanning the playlist files?", playlistFile.Name), 
-                "BDInfo Scan Error", MessageBoxButtons.YesNo);
+                "扫描播放列表文件时发生错误 {0}.\n\n光盘可能被复制保护或损坏.\n\n你想继续扫描播放列表文件吗?", playlistFile.Name), 
+                "BDInfo 扫描错误", MessageBoxButtons.YesNo);
             
             if (result == DialogResult.Yes) return true;
             else return false;
@@ -365,8 +365,8 @@ namespace BDInfo
         protected bool BDROM_StreamFileScanError(TSStreamFile streamFile, Exception ex)
         {
             DialogResult result = MessageBox.Show(string.Format(
-                "An error occurred while scanning the stream file {0}.\n\nThe disc may be copy-protected or damaged.\n\nDo you want to continue scanning the stream files?", streamFile.Name),
-                "BDInfo Scan Error", MessageBoxButtons.YesNo);
+                "扫描流文件时发生错误 {0}.\n\n光盘可能被复制保护或损坏.\n\n你想继续扫描流文件吗?", streamFile.Name),
+                "BDInfo 扫描错误", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes) return true;
             else return false;
@@ -375,8 +375,8 @@ namespace BDInfo
         protected bool BDROM_StreamClipFileScanError(TSStreamClipFile streamClipFile, Exception ex)
         {
             DialogResult result = MessageBox.Show(string.Format(
-                "An error occurred while scanning the stream clip file {0}.\n\nThe disc may be copy-protected or damaged.\n\nDo you want to continue scanning the stream clip files?", streamClipFile.Name),
-                "BDInfo Scan Error", MessageBoxButtons.YesNo);
+                "扫描流 clip 文件时发生错误 {0}.\n\n光盘可能被复制保护或损坏.\n\n你想继续扫描流 clip 文件吗?", streamClipFile.Name),
+                "BDInfo 扫描错误", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes) return true;
             else return false;
@@ -398,7 +398,7 @@ namespace BDInfo
             {
                 string msg = string.Format(
                     "{0}", ((Exception)e.Result).Message);
-                MessageBox.Show(msg, "BDInfo Error",
+                MessageBox.Show(msg, "BDInfo 错误",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonBrowse.Enabled = true;
                 buttonRescan.Enabled = true;
@@ -575,7 +575,7 @@ namespace BDInfo
                     }
                     else if (playlist.FileSize > 0)
                     {
-                        playlistSize.Text = playlist.FileSize.ToString("N0");
+                        playlistSize.Text = HumanReadableFilesize(playlist.FileSize);
                         playlistSize.Tag = playlist.FileSize;
                     }
                     else
@@ -588,7 +588,7 @@ namespace BDInfo
                         new ListViewItem.ListViewSubItem();
                     if (playlist.TotalAngleSize > 0)
                     {
-                        playlistSize2.Text = (playlist.TotalAngleSize).ToString("N0");
+                        playlistSize2.Text = HumanReadableFilesize(playlist.TotalAngleSize);
                     }
                     else
                     {
@@ -622,6 +622,18 @@ namespace BDInfo
                 listViewPlaylistFiles.Items[0].Selected = true;
             }
             ResetColumnWidths();
+        }
+
+        private String HumanReadableFilesize(double size)
+        {
+            String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB" };
+            double mod = 1024.0;
+            int i = 0;
+            while (size >= mod) {
+                size /= mod;
+                i++;
+            }
+            return Math.Round(size,4) + units[i];
         }
 
         private void LoadPlaylist()
@@ -688,7 +700,7 @@ namespace BDInfo
                 }
                 else if (clip.FileSize > 0)
                 {
-                    clipSize.Text = clip.FileSize.ToString("N0");
+                    clipSize.Text = HumanReadableFilesize(clip.FileSize);
                     clipSize.Tag = clip.FileSize;
                 }
                 else
@@ -701,7 +713,7 @@ namespace BDInfo
                     new ListViewItem.ListViewSubItem();
                 if (clip.PacketSize > 0)
                 {
-                    clipSize2.Text = clip.PacketSize.ToString("N0");
+                    clipSize2.Text = HumanReadableFilesize(clip.PacketSize);
                 }
                 else
                 {
@@ -809,7 +821,7 @@ namespace BDInfo
                     TSPlaylistFile playlist = 
                         BDROM.PlaylistFiles[playlistName];
                     item.SubItems[4].Text = string.Format(
-                        "{0}", (playlist.TotalAngleSize).ToString("N0"));
+                        "{0}", HumanReadableFilesize(playlist.TotalAngleSize));
                     item.SubItems[4].Tag = playlist.TotalAngleSize;
                 }
             }
@@ -844,7 +856,7 @@ namespace BDInfo
                     selectedPlaylist.StreamClips[i].Name == (string)item.SubItems[0].Tag)
                 {
                     item.SubItems[4].Text = string.Format(
-                         "{0}", (selectedPlaylist.StreamClips[i].PacketSize).ToString("N0"));
+                         "{0}", HumanReadableFilesize(selectedPlaylist.StreamClips[i].PacketSize));
                     item.Tag = selectedPlaylist.StreamClips[i].PacketSize;
 
                 }
@@ -900,11 +912,11 @@ namespace BDInfo
                 return;
             }
 
-            buttonScan.Text = "Cancel Scan";
+            buttonScan.Text = "取消扫描";
             progressBarScan.Value = 0;
             progressBarScan.Minimum = 0;
             progressBarScan.Maximum = 100;
-            labelProgress.Text = "Scanning disc...";
+            labelProgress.Text = "扫描光盘中...";
             labelTimeElapsed.Text = "00:00:00";
             labelTimeRemaining.Text = "00:00:00";
             buttonBrowse.Enabled = false;
@@ -956,7 +968,7 @@ namespace BDInfo
             DoWorkEventArgs e)
         {
             ScanResult = new ScanBDROMResult();
-            ScanResult.ScanException = new Exception("Scan is still running.");
+            ScanResult.ScanException = new Exception("扫描任然在运行.");
 
             System.Threading.Timer timer = null;
             try
@@ -1013,7 +1025,7 @@ namespace BDInfo
                     {
                         if (ScanBDROMWorker.CancellationPending)
                         {
-                            ScanResult.ScanException = new Exception("Scan was cancelled.");
+                            ScanResult.ScanException = new Exception("扫描被取消.");
                             thread.Abort();
                             return;
                         }
@@ -1134,7 +1146,7 @@ namespace BDInfo
 
             UpdatePlaylistBitrates();
 
-            labelProgress.Text = "Scan complete.";
+            labelProgress.Text = "扫描完成.";
             progressBarScan.Value = 100;
             labelTimeRemaining.Text = "00:00:00";
 
@@ -1143,7 +1155,7 @@ namespace BDInfo
                 string msg = string.Format(
                     "{0}", ScanResult.ScanException.Message);
 
-                MessageBox.Show(msg, "BDInfo Error",
+                MessageBox.Show(msg, "BDInfo 错误",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -1155,20 +1167,20 @@ namespace BDInfo
                 else if (ScanResult.FileExceptions.Count > 0)
                 {
                     MessageBox.Show(
-                        "Scan completed with errors (see report).", "BDInfo Scan",
+                        "扫描完成时有错误(请参阅报告).", "BDInfo 扫描",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     MessageBox.Show(
-                        "Scan completed successfully.", "BDInfo Scan",
+                        "扫描已成功完成.", "BDInfo 扫描",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             buttonBrowse.Enabled = true;
             buttonRescan.Enabled = true;
             buttonScan.Enabled = true;
-            buttonScan.Text = "Scan Bitrates";
+            buttonScan.Text = "扫描比特率";
         }
 
         #endregion
@@ -1179,7 +1191,7 @@ namespace BDInfo
 
         private void GenerateReport()
         {
-            ShowNotification("Please wait while we generate the report...");
+            ShowNotification("请等待我们生成报告...");
             buttonViewReport.Enabled = false;
 
             List<TSPlaylistFile> playlists = new List<TSPlaylistFile>();
@@ -1253,7 +1265,7 @@ namespace BDInfo
                     string msg = string.Format(
                         "{0}", ((Exception)e.Result).Message);
 
-                    MessageBox.Show(msg, "BDInfo Error",
+                    MessageBox.Show(msg, "BDInfo 错误",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -1423,7 +1435,7 @@ namespace BDInfo
 
     public class ScanBDROMResult
     {
-        public Exception ScanException = new Exception("Scan has not been run.");
+        public Exception ScanException = new Exception("扫描没有运行.");
         public Dictionary<string, Exception> FileExceptions = new Dictionary<string, Exception>();
     }
 }

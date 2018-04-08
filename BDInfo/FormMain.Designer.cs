@@ -101,7 +101,7 @@ namespace BDInfo
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
             this.buttonBrowse.TabIndex = 1;
-            this.buttonBrowse.Text = "Browse...";
+            this.buttonBrowse.Text = "浏览...";
             this.buttonBrowse.UseVisualStyleBackColor = true;
             this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
             // 
@@ -120,9 +120,9 @@ namespace BDInfo
             this.labelSource.AutoSize = true;
             this.labelSource.Location = new System.Drawing.Point(14, 8);
             this.labelSource.Name = "labelSource";
-            this.labelSource.Size = new System.Drawing.Size(141, 13);
+            this.labelSource.Size = new System.Drawing.Size(95, 13);
             this.labelSource.TabIndex = 3;
-            this.labelSource.Text = "Select the Source BD-ROM:";
+            this.labelSource.Text = "选择 BD-ROM 源:";
             // 
             // buttonSettings
             // 
@@ -131,7 +131,7 @@ namespace BDInfo
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(108, 23);
             this.buttonSettings.TabIndex = 10;
-            this.buttonSettings.Text = "Settings...";
+            this.buttonSettings.Text = "设置...";
             this.buttonSettings.UseVisualStyleBackColor = true;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
@@ -142,9 +142,9 @@ namespace BDInfo
             this.labelTimeRemainingElapsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTimeRemainingElapsed.Location = new System.Drawing.Point(310, 503);
             this.labelTimeRemainingElapsed.Name = "labelTimeRemainingElapsed";
-            this.labelTimeRemainingElapsed.Size = new System.Drawing.Size(135, 13);
+            this.labelTimeRemainingElapsed.Size = new System.Drawing.Size(117, 13);
             this.labelTimeRemainingElapsed.TabIndex = 35;
-            this.labelTimeRemainingElapsed.Text = "Time Remaining / Elapsed:";
+            this.labelTimeRemainingElapsed.Text = "剩余时间 / 已用时间:";
             // 
             // labelTimeDivider
             // 
@@ -192,9 +192,9 @@ namespace BDInfo
             this.labelPlaylistFiles.AutoSize = true;
             this.labelPlaylistFiles.Location = new System.Drawing.Point(14, 55);
             this.labelPlaylistFiles.Name = "labelPlaylistFiles";
-            this.labelPlaylistFiles.Size = new System.Drawing.Size(86, 13);
+            this.labelPlaylistFiles.Size = new System.Drawing.Size(82, 13);
             this.labelPlaylistFiles.TabIndex = 28;
-            this.labelPlaylistFiles.Text = "Select Playlist(s):";
+            this.labelPlaylistFiles.Text = "选择播放列表:";
             // 
             // buttonViewReport
             // 
@@ -204,7 +204,7 @@ namespace BDInfo
             this.buttonViewReport.Name = "buttonViewReport";
             this.buttonViewReport.Size = new System.Drawing.Size(108, 23);
             this.buttonViewReport.TabIndex = 9;
-            this.buttonViewReport.Text = "View Report...";
+            this.buttonViewReport.Text = "浏览报告...";
             this.buttonViewReport.UseVisualStyleBackColor = true;
             this.buttonViewReport.Click += new System.EventHandler(this.buttonViewReport_Click);
             // 
@@ -216,7 +216,7 @@ namespace BDInfo
             this.buttonScan.Name = "buttonScan";
             this.buttonScan.Size = new System.Drawing.Size(108, 23);
             this.buttonScan.TabIndex = 8;
-            this.buttonScan.Text = "Scan Bitrates";
+            this.buttonScan.Text = "扫描比特率";
             this.buttonScan.UseVisualStyleBackColor = true;
             this.buttonScan.Click += new System.EventHandler(this.buttonScan_Click);
             // 
@@ -249,7 +249,7 @@ namespace BDInfo
             this.buttonSelectAll.Name = "buttonSelectAll";
             this.buttonSelectAll.Size = new System.Drawing.Size(75, 23);
             this.buttonSelectAll.TabIndex = 2;
-            this.buttonSelectAll.Text = "Select All";
+            this.buttonSelectAll.Text = "全选";
             this.buttonSelectAll.UseVisualStyleBackColor = true;
             this.buttonSelectAll.Click += new System.EventHandler(this.buttonSelectAll_Click);
             // 
@@ -260,7 +260,7 @@ namespace BDInfo
             this.buttonUnselectAll.Name = "buttonUnselectAll";
             this.buttonUnselectAll.Size = new System.Drawing.Size(75, 23);
             this.buttonUnselectAll.TabIndex = 3;
-            this.buttonUnselectAll.Text = "Unselect All";
+            this.buttonUnselectAll.Text = "取消全选";
             this.buttonUnselectAll.UseVisualStyleBackColor = true;
             this.buttonUnselectAll.Click += new System.EventHandler(this.buttonUnselectAll_Click);
             // 
@@ -271,7 +271,7 @@ namespace BDInfo
             this.buttonCustomPlaylist.Name = "buttonCustomPlaylist";
             this.buttonCustomPlaylist.Size = new System.Drawing.Size(75, 23);
             this.buttonCustomPlaylist.TabIndex = 4;
-            this.buttonCustomPlaylist.Text = "Custom...";
+            this.buttonCustomPlaylist.Text = "自定义...";
             this.buttonCustomPlaylist.UseVisualStyleBackColor = true;
             this.buttonCustomPlaylist.Click += new System.EventHandler(this.buttonCustomPlaylist_Click);
             // 
@@ -338,28 +338,28 @@ namespace BDInfo
             // 
             // columnHeaderPlaylistName
             // 
-            this.columnHeaderPlaylistName.Text = "Playlist File";
+            this.columnHeaderPlaylistName.Text = "播放列表文件";
             this.columnHeaderPlaylistName.Width = 103;
             // 
             // columnHeaderPlaylistGroup
             // 
-            this.columnHeaderPlaylistGroup.Text = "Group";
+            this.columnHeaderPlaylistGroup.Text = "组";
             // 
             // columnHeaderPlaylistLength
             // 
-            this.columnHeaderPlaylistLength.Text = "Length";
+            this.columnHeaderPlaylistLength.Text = "长度";
             this.columnHeaderPlaylistLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeaderPlaylistLength.Width = 73;
             // 
             // columnHeaderPlaylistEstimatedBytes
             // 
-            this.columnHeaderPlaylistEstimatedBytes.Text = "Estimated Bytes";
+            this.columnHeaderPlaylistEstimatedBytes.Text = "预估大小";
             this.columnHeaderPlaylistEstimatedBytes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeaderPlaylistEstimatedBytes.Width = 98;
             // 
             // columnHeaderPlaylistMeasuredBytes
             // 
-            this.columnHeaderPlaylistMeasuredBytes.Text = "Measured Bytes";
+            this.columnHeaderPlaylistMeasuredBytes.Text = "实际大小";
             this.columnHeaderPlaylistMeasuredBytes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeaderPlaylistMeasuredBytes.Width = 125;
             // 
@@ -387,28 +387,28 @@ namespace BDInfo
             // 
             // columnHeaderFileName
             // 
-            this.columnHeaderFileName.Text = "Stream File";
+            this.columnHeaderFileName.Text = "流文件";
             this.columnHeaderFileName.Width = 82;
             // 
             // columnHeaderIndex
             // 
-            this.columnHeaderIndex.Text = "Index";
+            this.columnHeaderIndex.Text = "目录";
             // 
             // columnHeaderFileLength
             // 
-            this.columnHeaderFileLength.Text = "Length";
+            this.columnHeaderFileLength.Text = "长度";
             this.columnHeaderFileLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeaderFileLength.Width = 77;
             // 
             // columnHeaderFileEstimatedBytes
             // 
-            this.columnHeaderFileEstimatedBytes.Text = "Estimated Bytes";
+            this.columnHeaderFileEstimatedBytes.Text = "预估大小";
             this.columnHeaderFileEstimatedBytes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeaderFileEstimatedBytes.Width = 119;
             // 
             // columnHeaderFileMeasuredBytes
             // 
-            this.columnHeaderFileMeasuredBytes.Text = "Measured Bytes";
+            this.columnHeaderFileMeasuredBytes.Text = "实际大小";
             this.columnHeaderFileMeasuredBytes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeaderFileMeasuredBytes.Width = 125;
             // 
@@ -434,21 +434,21 @@ namespace BDInfo
             // 
             // columnHeaderStreamCodec
             // 
-            this.columnHeaderStreamCodec.Text = "Codec";
+            this.columnHeaderStreamCodec.Text = "编码";
             this.columnHeaderStreamCodec.Width = 103;
             // 
             // columnHeaderStreamLanguage
             // 
-            this.columnHeaderStreamLanguage.Text = "Language";
+            this.columnHeaderStreamLanguage.Text = "语言";
             this.columnHeaderStreamLanguage.Width = 151;
             // 
             // columnHeaderBitrate
             // 
-            this.columnHeaderBitrate.Text = "Bit Rate";
+            this.columnHeaderBitrate.Text = "比特率";
             // 
             // columnHeaderDescription
             // 
-            this.columnHeaderDescription.Text = "Description";
+            this.columnHeaderDescription.Text = "描述";
             this.columnHeaderDescription.Width = 306;
             // 
             // buttonRescan
@@ -459,7 +459,7 @@ namespace BDInfo
             this.buttonRescan.Name = "buttonRescan";
             this.buttonRescan.Size = new System.Drawing.Size(75, 23);
             this.buttonRescan.TabIndex = 2;
-            this.buttonRescan.Text = "Rescan";
+            this.buttonRescan.Text = "重新扫描";
             this.buttonRescan.UseVisualStyleBackColor = true;
             this.buttonRescan.Click += new System.EventHandler(this.buttonRescan_Click);
             // 
@@ -489,7 +489,7 @@ namespace BDInfo
             this.Controls.Add(this.textBoxSource);
             this.Controls.Add(this.labelSource);
             this.Name = "FormMain";
-            this.Text = "BDInfo v.0.7.1";
+            this.Text = "BDInfo v.0.7.1 中文版 By:AceSheep";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.LocationChanged += new System.EventHandler(this.FormMain_LocationChanged);

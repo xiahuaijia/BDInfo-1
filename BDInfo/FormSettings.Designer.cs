@@ -69,9 +69,9 @@ namespace BDInfo
             this.checkBoxFilterLoopingPlaylists.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxFilterLoopingPlaylists.Location = new System.Drawing.Point(11, 99);
             this.checkBoxFilterLoopingPlaylists.Name = "checkBoxFilterLoopingPlaylists";
-            this.checkBoxFilterLoopingPlaylists.Size = new System.Drawing.Size(177, 17);
+            this.checkBoxFilterLoopingPlaylists.Size = new System.Drawing.Size(137, 17);
             this.checkBoxFilterLoopingPlaylists.TabIndex = 3;
-            this.checkBoxFilterLoopingPlaylists.Text = "Filter playlists that contain loops.";
+            this.checkBoxFilterLoopingPlaylists.Text = "过滤循环的播放列表.";
             this.checkBoxFilterLoopingPlaylists.UseVisualStyleBackColor = true;
             // 
             // checkBoxAutosaveReport
@@ -79,9 +79,9 @@ namespace BDInfo
             this.checkBoxAutosaveReport.AutoSize = true;
             this.checkBoxAutosaveReport.Location = new System.Drawing.Point(11, 53);
             this.checkBoxAutosaveReport.Name = "checkBoxAutosaveReport";
-            this.checkBoxAutosaveReport.Size = new System.Drawing.Size(202, 17);
+            this.checkBoxAutosaveReport.Size = new System.Drawing.Size(161, 17);
             this.checkBoxAutosaveReport.TabIndex = 2;
-            this.checkBoxAutosaveReport.Text = "Auto-save report on scan completion.";
+            this.checkBoxAutosaveReport.Text = "扫描完成时自动保存报告.";
             this.checkBoxAutosaveReport.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
@@ -91,7 +91,7 @@ namespace BDInfo
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 6;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
@@ -101,7 +101,7 @@ namespace BDInfo
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 5;
-            this.buttonOK.Text = "OK";
+            this.buttonOK.Text = "确定";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
@@ -112,9 +112,9 @@ namespace BDInfo
             this.checkBoxGenerateStreamDiagnostics.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxGenerateStreamDiagnostics.Location = new System.Drawing.Point(11, 7);
             this.checkBoxGenerateStreamDiagnostics.Name = "checkBoxGenerateStreamDiagnostics";
-            this.checkBoxGenerateStreamDiagnostics.Size = new System.Drawing.Size(195, 17);
+            this.checkBoxGenerateStreamDiagnostics.Size = new System.Drawing.Size(149, 17);
             this.checkBoxGenerateStreamDiagnostics.TabIndex = 0;
-            this.checkBoxGenerateStreamDiagnostics.Text = "Include stream diagnostics in report.";
+            this.checkBoxGenerateStreamDiagnostics.Text = "在报告中包含串流信息.";
             this.checkBoxGenerateStreamDiagnostics.UseVisualStyleBackColor = true;
             // 
             // checkBoxKeepStreamOrder
@@ -122,9 +122,9 @@ namespace BDInfo
             this.checkBoxKeepStreamOrder.AutoSize = true;
             this.checkBoxKeepStreamOrder.Location = new System.Drawing.Point(11, 76);
             this.checkBoxKeepStreamOrder.Name = "checkBoxKeepStreamOrder";
-            this.checkBoxKeepStreamOrder.Size = new System.Drawing.Size(165, 17);
+            this.checkBoxKeepStreamOrder.Size = new System.Drawing.Size(113, 17);
             this.checkBoxKeepStreamOrder.TabIndex = 4;
-            this.checkBoxKeepStreamOrder.Text = "Keep original stream ordering.";
+            this.checkBoxKeepStreamOrder.Text = "保持原串流顺序.";
             this.checkBoxKeepStreamOrder.UseVisualStyleBackColor = true;
             // 
             // checkBoxGenerateTextSummary
@@ -134,9 +134,9 @@ namespace BDInfo
             this.checkBoxGenerateTextSummary.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxGenerateTextSummary.Location = new System.Drawing.Point(11, 30);
             this.checkBoxGenerateTextSummary.Name = "checkBoxGenerateTextSummary";
-            this.checkBoxGenerateTextSummary.Size = new System.Drawing.Size(198, 17);
+            this.checkBoxGenerateTextSummary.Size = new System.Drawing.Size(173, 17);
             this.checkBoxGenerateTextSummary.TabIndex = 1;
-            this.checkBoxGenerateTextSummary.Text = "Include quick text summary in report.";
+            this.checkBoxGenerateTextSummary.Text = "在报告中包含快速文本摘要.";
             this.checkBoxGenerateTextSummary.UseVisualStyleBackColor = true;
             // 
             // checkBoxFilterShortPlaylists
@@ -146,14 +146,14 @@ namespace BDInfo
             this.checkBoxFilterShortPlaylists.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxFilterShortPlaylists.Location = new System.Drawing.Point(11, 122);
             this.checkBoxFilterShortPlaylists.Name = "checkBoxFilterShortPlaylists";
-            this.checkBoxFilterShortPlaylists.Size = new System.Drawing.Size(153, 17);
+            this.checkBoxFilterShortPlaylists.Size = new System.Drawing.Size(110, 17);
             this.checkBoxFilterShortPlaylists.TabIndex = 7;
-            this.checkBoxFilterShortPlaylists.Text = "Filter playlists with length < ";
+            this.checkBoxFilterShortPlaylists.Text = "过滤播放列表 < ";
             this.checkBoxFilterShortPlaylists.UseVisualStyleBackColor = true;
             // 
             // textBoxFilterShortPlaylistsValue
             // 
-            this.textBoxFilterShortPlaylistsValue.Location = new System.Drawing.Point(160, 120);
+            this.textBoxFilterShortPlaylistsValue.Location = new System.Drawing.Point(115, 120);
             this.textBoxFilterShortPlaylistsValue.MaxLength = 4;
             this.textBoxFilterShortPlaylistsValue.Name = "textBoxFilterShortPlaylistsValue";
             this.textBoxFilterShortPlaylistsValue.Size = new System.Drawing.Size(41, 20);
@@ -163,20 +163,20 @@ namespace BDInfo
             // labelPlaylistLength
             // 
             this.labelPlaylistLength.AutoSize = true;
-            this.labelPlaylistLength.Location = new System.Drawing.Point(202, 124);
+            this.labelPlaylistLength.Location = new System.Drawing.Point(157, 124);
             this.labelPlaylistLength.Name = "labelPlaylistLength";
-            this.labelPlaylistLength.Size = new System.Drawing.Size(24, 13);
+            this.labelPlaylistLength.Size = new System.Drawing.Size(19, 13);
             this.labelPlaylistLength.TabIndex = 9;
-            this.labelPlaylistLength.Text = "sec";
+            this.labelPlaylistLength.Text = "秒";
             // 
             // checkBoxUseImagePrefix
             // 
             this.checkBoxUseImagePrefix.AutoSize = true;
             this.checkBoxUseImagePrefix.Location = new System.Drawing.Point(11, 145);
             this.checkBoxUseImagePrefix.Name = "checkBoxUseImagePrefix";
-            this.checkBoxUseImagePrefix.Size = new System.Drawing.Size(104, 17);
+            this.checkBoxUseImagePrefix.Size = new System.Drawing.Size(98, 17);
             this.checkBoxUseImagePrefix.TabIndex = 10;
-            this.checkBoxUseImagePrefix.Text = "Use image prefix";
+            this.checkBoxUseImagePrefix.Text = "使用图片前缀";
             this.checkBoxUseImagePrefix.UseVisualStyleBackColor = true;
             // 
             // textBoxUseImagePrefixValue
@@ -193,9 +193,9 @@ namespace BDInfo
             this.checkBoxEnableSSIF.AutoSize = true;
             this.checkBoxEnableSSIF.Location = new System.Drawing.Point(11, 168);
             this.checkBoxEnableSSIF.Name = "checkBoxEnableSSIF";
-            this.checkBoxEnableSSIF.Size = new System.Drawing.Size(134, 17);
+            this.checkBoxEnableSSIF.Size = new System.Drawing.Size(106, 17);
             this.checkBoxEnableSSIF.TabIndex = 12;
-            this.checkBoxEnableSSIF.Text = "Enable SSIF scanning.";
+            this.checkBoxEnableSSIF.Text = "启用 SSIF 扫描.";
             this.checkBoxEnableSSIF.UseVisualStyleBackColor = true;
             // 
             // FormSettings
@@ -222,7 +222,7 @@ namespace BDInfo
             this.MaximizeBox = false;
             this.Name = "FormSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "BDInfo Settings";
+            this.Text = "BDInfo 设置";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -106,3 +106,9 @@ Generated_Code #added for RIA/Silverlight projects
 _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
+/.vs/BDInfo/v15/Server/sqlite3/db.lock
+/.vs/BDInfo/v15/Server/sqlite3/storage.ide
+/.vs/BDInfo/v15/Server/sqlite3/storage.ide-shm
+/.vs/BDInfo/v15/Server/sqlite3/storage.ide-wal
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
